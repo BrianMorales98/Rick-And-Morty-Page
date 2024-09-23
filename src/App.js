@@ -13,25 +13,30 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setCharacters(data.results);
-        setInfo(data.info);
+        setInfo({
+          next: data.info.next,
+          prev: data.info.prev
 
-      })
+      });
+    })
       .catch(error => console.log(error))
   }
 
 
   const onPrevious = () => {
-    fetchCharacters(info.prev);
+    if (info.prev !== null) {
+    fetchCharacters (info.prev);
 
   }
-
+  }
 
 
  const onNext = () => {
-    fetchCharacters(info.next);
+  if (info.next !== null) {
+  fetchCharacters (info.next);
 
   }
-
+ }
 
 
   useEffect(() => {
@@ -44,9 +49,9 @@ function App() {
       <Navbar brand="Rick and Morty Page" />
       
       <div className="container mt-5">
-        <Pagination prev = {info.prev} next = {info.next} onPrevious={onPrevious} onNext={onNext} />
+        <Pagination prev = {info.prev} next = {info.next} onPrevious ={ onPrevious } onNext ={ onNext } />
         <Characters characters={characters} />
-        <Pagination prev = {info.prev} next = {info.next} onPrevious={onPrevious} onNext={onNext} />
+        <Pagination prev = {info.prev} next = {info.next} onPrevious ={ onPrevious } onNext ={ onNext } />
       </div>
     </>
   );

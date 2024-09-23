@@ -12,20 +12,24 @@ const Pagination = ({ prev, next, onPrevious, onNext }) => {
 
 
   return (
-    <nav className='my-5'>
-      <ul className='pagination justify-content-center'>
+    <nav className="my-5">
+      <ul className="pagination justify-content-center">
         {prev ? (
-          <li className='page-item'>
-            <button className='page-link' onClick={handlePrevious}>
+          
+          <li className="page-item">
+            <button className="page-link" onCLick={handlePrevious}>
               Previous
             </button>
           </li>
-        ) : null}
+       
+       ) : null}
 
         {next ? (
 
-          <li className='page=item'>
-            <button className='page-link' onClick={handleNext}>Next</button>
+          <li className="page=item">
+            <button className="page-link" onCLick={handleNext}>
+              Next
+              </button>
           </li>
         ) : null}
       </ul>

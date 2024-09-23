@@ -15,7 +15,7 @@ const Characters = ({ characters = [] }) => {
                 <p> Specie:  {item.species}</p>
                 <p> Location: {item.location.name}</p>
                 <p> Origin:  {item.origin.name}</p>
-                <p> Created: {item.created}</p>
+               
 
               </div>
             </div>
